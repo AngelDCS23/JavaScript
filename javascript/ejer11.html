@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Ejemplo Javacript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form id="formulario">
+            Nombre:
+            <input type="text" id="nombre">
+            <br><br>
+            Genero:
+            <input type="radio" name="genero" id="radio1">Masculino
+            <input type="radio" name="genero" id="radio2">Femenino
+            <br><br>
+            Aficiones:
+            <input type="checkbox" name="aficion" value="leer"> Leer
+            <input type="checkbox" name="aficion" value="pelis"> Ver peliculas
+            <input type="checkbox" name="aficion" value="juegos"> Videojuegos
+            <br><br>
+            Pais:
+            <select name="pais" id="pais">
+                <option value="">Selecione nacionalidad</option>
+                <option value="arg">Argentina</option>
+                <option value="esp">España</option>
+                <option value="por">Portugal</option>
+            </select><br><br>
+            <input type="submit" value="Enviar" onclick="verseleccion()">
+        </form>
+        <div id="resultado">
+            <script>
+                function verseleccion(){
+                    let resultado = document.getElementById("resultado");
+                    let nombre = document.getElementById("nombre");
+                    resultado.innerHTML = 'Nombre: ' + nombre;
+                    if (document.getElementById("radio1").checked){
+                        resultado.innerHTML = 'Sexo masculino'
+                    }
+                    if (document.getElementById("radio2").checked){
+                        resultado.innerHTML = 'Sexo femenino'
+                    }
+                }
+            </script>
+        </div>
+
+    </body>
+</html>

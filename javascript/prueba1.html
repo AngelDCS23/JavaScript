@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calcular IVA en España</title>
+    </head>
+    <body>
+        <h1>Calcular Iva en España</h1>
+        <p>Intruduce el precio sin iva</p>
+        <input type="text" id="precio"><br>
+        <p>Selecione el tipo de IVA</p>
+        <select name="tipoIVA" id="tipoIVA">
+            <option value="general">IVA general (21%)</option>
+            <option value="reducido">IVA reducido (10%)</option>
+            <option value="superreducido">IVA super reducido (4%)</option>
+        </select>
+        <button onclick="calcularPrecioDesglosado()">Calcular percio con IVA</button>
+        <p>Precio desglosado: <span id="precioConIVA"></span></p>
+        <script src="prueba1.js"></script>
+        <script>
+            function calcularPrecioDesglosado(){
+                let precio = Number(document.getElementById('precio').value);
+                let tipoIVA = document.getElementById('tipoIVA').value;
+
+                let precioConIVA;
+                let descuentoIRPF = calcularDescIRPF(precio);
+                let precioConIRPF = calcularPrecioConIRPF(precio);
+                let precioFinal = (precioConIVA - descuentoIRPF);
+                if (tipoIVA == 'general'){
+                    precioConIVA = calcularIVAgeneral(precio);
+                }
+                else if (tipoIVA == 'reducido'){
+                    precioConIVA = calcularIVAreducido(precio);
+                }
+                else if (tipoIVA == 'superreducido'){
+                    precioConIVA = calcularIVAsuperreducido(precio);
+                }
+                document.getElementById('precioConIVA').textContent = 'Descuento IRPF:' + descuentoIRPF.toFixed(2) + ' € ' + 
+                ' Precio final: ' + precioFinal.toFixed(2) + ' €';
+            }
+        </script>
+    </body>
+</html>

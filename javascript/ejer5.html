@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Entrada App</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form id="entradaApp">
+            <label for="username">Nombre de usuario</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+        <script>
+          let usuarios = ["fran","angel","javi"]
+          let passwords = ["27121999","18102001","22022004"]
+          for (let i=3;i>0; i--){
+            if (username === usuarios[1] && password === passwords[1]){
+                alert ("Credenciales correctas")    
+                return;
+                }else{
+                    alert("Credenciales incorrectas te quedan: " + i + " intentos")
+                    i=-1
+                }
+            else if(username === usuarios[2] && password === passwords[2]){
+                alert ("Credenciales correctas")    
+                return;
+                }else{
+                    alert("Credenciales incorrectas te quedan: " + i + " intentos")
+                    i=-1
+                }
+            else if(username === usuarios[3] && password === passwords[3]){
+                alert ("Credenciales correctas")    
+                return;
+                }else{
+                    alert("Credenciales incorrectas te quedan: " + i + " intentos")
+                    i=-1
+                }
+            }
+          }
+        </script>
+    </body>
+</html>

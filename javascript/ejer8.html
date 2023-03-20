@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Ejemplo javascript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            function formatearFecha (dia, mes, año, diastotal,diasemana){
+                diasemana = (diastotal % 7);
+                let s = 'hoy es ' + dia + ' de ';
+                switch (mes){
+                    case 1:
+                    diastotal = dia;
+                    s = s + 'enero ';
+                    break;
+                    case 2:
+                    diastotal = dia + 31;
+                    s = s + 'febrero ';
+                    break;
+                    case 3: 
+                    diastotal = dia + 59;
+                    s = s + 'marzo ';
+                    break;
+                    case 4: 
+                    diastotal = dia + 90;
+                    s = s + 'abril ';
+                    break;
+                    case 5: 
+                    diastotal = dia + 120;
+                    s = s + 'mayo ';
+                    break;
+                    case 6: 
+                    diastotal = dia + 151;
+                    s = s + 'junio ';
+                    break;
+                    case 7: 
+                    diastotal = dia + 181;
+                    s = s + 'julio ';
+                    break;
+                    case 8: 
+                    diastotal = dia + 212;
+                    s = s + 'agosto ';
+                    break;
+                    case 9: 
+                    diastotal = dia + 243;
+                    s = s + 'septiembre ';
+                    break;
+                    case 10: 
+                    diastotal = dia + 273;
+                    s = s + 'octubre ';
+                    break;
+                    case 11: 
+                    diastotal = dia + 304;
+                    s = s + 'noviembre ';
+                    break;
+                    case 12: 
+                    diastotal = dia + 334;
+                    s = s + 'diciembre ';
+                    break;
+                }
+                let semana = ['sabado','domingo','lunes','martes','miercoles','jueves','viernes']
+
+                s = s + 'de ' + año + ' y hoy es ' + semana[diasemana] + diasemana;
+                return s;
+            }
+            document.write(formatearFecha(27,12,1999))
+        </script>
+    </body>
+</html>

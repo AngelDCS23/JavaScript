@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Ejemplo de javacript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            function Cliente(nombre, saldo, cuenta){
+                this.nombre = nombre;
+                this.saldo = saldo;
+                this.depositar = depositar;
+                this.extraer = extraer;
+                this.cuenta = cuenta;
+                this.recargo = recargo
+            }
+            function depositar(dinero){
+                this.saldo = this.saldo + dinero;
+            }
+            function extraer(dinero){
+                this.saldo = this.saldo - dinero;
+            }
+            function recargo(comision){
+                this.saldo = this.saldo - (this.saldo * comision);
+            }
+            let cliente1;
+            cliente1 = new Cliente('diego',1200,18217289623163);
+            document.write('Nombre del cliente: ' + cliente1.nombre + '<br>');
+            document.write('Saldo actual: ' + cliente1.saldo + '<br>');
+            document.write('Numero de cuenta: ' + cliente1.cuenta + '<br>');
+            cliente1.depositar(120);
+            document.write('Saldo despues de depositar 120: ' + cliente1.saldo + '<br>');
+            cliente1.extraer(1000);
+            document.write('Saldo despues de extraer 1000: ' + cliente1.saldo + '<br>');
+            cliente1.recargo(0.05);
+            document.write('Saldo despues del recargo del 5%: ' + cliente1.saldo + '<br>');
+        </script>
+    </body>
+</html>

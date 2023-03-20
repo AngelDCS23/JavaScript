@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Ejemplo de javascript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            <input type="radio" name="estudios" id="radio1"> Sin estudios
+            <br>
+            <input type="radio" name="estudios" id="radio2"> Primarios
+            <br>
+            <input type="radio" name="estudios" id="radio3"> Secudarios
+            <br>
+            <input type="radio" name="estudios" id="radio4"> Universitario
+            <br>
+            <input type="radio" name="estudios" id="radio5"> Master
+            <br>
+            <input type="button" value="Mostar" onclick="mostarSeleccionado()">
+        </form>
+        <div id="resultado">
+            <script>
+                function mostarSeleccionado(){
+                let resultado = document.getElementById("resultado");
+                if (document.getElementById("radio1").checked){
+                    resultado.innerHTML = 'No tienes estudios'
+                }
+                if (document.getElementById("radio2").checked){
+                    resultado.innerHTML = 'Tienes estudios primarios'
+                }
+                if (document.getElementById("radio3").checked){
+                    resultado.innerHTML = 'Tienes estudios secundarios'
+                }
+                if (document.getElementById("radio4").checked){
+                    resultado.innerHTML = 'Tienes estudios universitarios'
+                }
+                if (document.getElementById("radio5").checked){
+                    resultado.innerHTML = 'Tienes estudios de master'
+                }
+
+            }
+            </script>
+        </div>
+    </body>
+</html>

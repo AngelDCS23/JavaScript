@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Ejemplo de javascript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        El siguiente ejemplo nos permite cargar una segunda página y luego retroceder a la pirmera página sin tener 
+        que solicitarla de nuevo al servidor:
+        <br>
+        <a href="https://google.com">Ir a la pag 2</a>
+        <br><br>
+        <a href="javascript:avanzar()">Extraer del cache la segunda página</a>
+        <script>
+            function avanzar(){
+                window.history.go(1);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Ejemplo de javascript</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            <input type="checkbox" id="Entorno" value="Entorno">Entorno <br>
+            <input type="checkbox" id="Datos" value="Datos">Base de datos <br>
+            <input type="checkbox" id="Sistema" value="Sistema">Sistema <br>
+            <input type="checkbox" id="Java" value="Java">Java <br>
+            <input type="checkbox" id="Marcas" value="Marcas">Marcas <br>
+            <button type="button" onclick="asigna()">Mostar asignatura</button>
+        </form>
+        <div id="resultado"></div>
+        <script>
+            function asigna(){
+                let subjets=[];
+                let total=0;
+
+                if (document.getElementById("Entorno").checked){
+                    subjets.push(document.getElementById("Entorno").value);
+                    total ++;
+                }
+                if (document.getElementById("Datos").checked){
+                    subjets.push(document.getElementById("Datos").value);
+                    total ++;
+                }
+                if (document.getElementById("Sistema").checked){
+                    subjets.push(document.getElementById("Sistema").value);
+                    total ++;
+                }
+                if (document.getElementById("Java").checked){
+                    subjets.push(document.getElementById("Java").value);
+                    total ++;
+                }
+                if (document.getElementById("Marcas").checked){
+                    subjets.push(document.getElementById("Marcas").value);
+                    total ++;
+                }
+                document.getElementById("resultado").innerHTML="Asignatura elegidas "+subjets.join(". ")+ "<br>"
+                +" Nº Asignaturas "+ total;
+            }
+        </script>
+    </body>
+</html>
